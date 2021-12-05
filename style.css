@@ -1,0 +1,417 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(241, 239, 239);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/the-new-york-public-library-w8uU35aGU6A-unsplash.jpg) no-repeat;
+  background-size: cover;
+}
+
+/* Grand parent */
+#formContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35vw;
+}
+
+/* Parent */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-size: 1.3em;
+  padding: 20px;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  border-radius: 5px;
+  text-align: center;
+  color: rgb(216, 216, 216);
+}
+
+/* Big brother */
+#infoFullContainer,
+#userFullContainer {
+  background-color: rgba(34, 34, 34, 0.199);
+  border-radius: 5px;
+  padding: 15px 10px;
+  width: 90%;
+}
+
+.formBoxHeaders {
+  display: inline-block;
+}
+
+/* Child container nr 1 (random) */
+#infoContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* #infoContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* Child container nr 2 (user) */
+
+#userFullContainer {
+  margin: 1em 0;
+}
+
+#userContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.userDiv {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  width: 90%;
+}
+
+#submitButton {
+  margin: 0.3em auto;
+  border: none;
+  background-color: goldenrod;
+  border-radius: 5px;
+  width: 50%;
+  font-size: 2em;
+  color: white;
+}
+
+/* Text input fields */
+#usernameInput,
+#userMoneyInput {
+  border: none;
+  border-bottom: 2px solid rgba(221, 221, 221, 0.5);
+  background-color: rgba(63, 63, 63, 0);
+  border-radius: 3px;
+  height: 1.5em;
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+#usernameInput::placeholder,
+#userMoneyInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Hover effects  */
+#usernameInput:hover,
+#userMoneyInput:hover {
+  background-color: rgba(63, 63, 63, 0.2);
+}
+
+input[type="checkbox"]:not(:checked):hover + label::before,
+input[type="radio"]:not(:checked):hover + label::before {
+  border: 5px double #215064;
+}
+
+input[type="checkbox"]:not(:checked):hover + label,
+input[type="radio"]:not(:checked):hover + label {
+  color: goldenrod;
+}
+
+/* Animations  */
+
+@keyframes discoBorder {
+  5% {
+    border-top: #215064 4px solid;
+  }
+  10% {
+    border-top: none;
+  }
+  15% {
+    border-right: #215064 4px solid;
+  }
+  20% {
+    border-right: none;
+  }
+  35% {
+    border-bottom: #215064 4px solid;
+  }
+  45% {
+    border-bottom: none;
+  }
+  65% {
+    border-left: #215064 4px solid;
+  }
+  70% {
+    border-left: none;
+  }
+  100% {
+    border-top: #215064 4px solid;
+    border-right: #215064 4px solid;
+    border-bottom: #215064 4px solid;
+    border-left: #215064 4px solid;
+  }
+}
+
+#usernameInput:focus,
+#userMoneyInput:focus {
+  border-bottom: none;
+  outline: none;
+  animation-name: discoBorder;
+  animation-timing-function: linear;
+  animation-duration: 15s;
+  animation-fill-mode: forwards;
+}
+
+/*Checkboxes styles https://codepen.io/valerypatorius/pen/oXGMGL*/
+
+.boxes {
+  margin: auto;
+  padding: 20px;
+}
+
+.radioContainer {
+  display: flex;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px "Open Sans", Arial, sans-serif;
+  color: #ddd;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child,
+input[type="radio"] + label:last-child {
+  margin-bottom: 0;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #215064;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.6;
+  -webkit-transition: all 0.12s, border-color 0.08s;
+  transition: all 0.12s, border-color 0.08s;
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*-------------- The things after the preparing box ----------------- */
+
+#container {
+  visibility: hidden;
+  display: flex;
+  max-width: 100%;
+  width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid black;
+  width: 250px;
+  justify-content: space-around;
+  padding: 10px 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#yolo {
+  flex-basis: 20%;
+}
+
+.buttons {
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#addUser {
+  font-size: 26px;
+  background-color: goldenrod;
+  color: white;
+}
+
+main {
+  flex: 1;
+  padding: 10px 20px;
+}
+
+h2 {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin: 0 0 20px;
+  border-bottom: 1px solid black;
+}
+
+h3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0 0 20px;
+  border-bottom: 1px solid black;
+  background-color: white;
+  margin: 20px 0 0;
+}
+
+.person {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#moneyHeader {
+  color: green;
+}
+
+.shake-horizontal {
+  border: 2px red solid;
+  -webkit-animation: shake-horizontal 0.8s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+  90% {
+    transform: translateX(-8px);
+  }
+}
+
+/*main container*/
+#sortBox {
+  position: relative;
+}
+
+/*When hovered the hidden box will show*/
+#sortBox:hover #hiddenSortBox {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*Hidden box
+ backdrop filter*/
+#hiddenSortBox {
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  transition: opacity 1s;
+  left: 8.8em;
+  top: -300%;
+  background-color: rgba(218, 165, 32, 0.8);
+  color: white;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0.3em 0;
+  box-shadow: 0 0 10px black;
+}
+
+#hiddenSortBox li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.3em;
+  padding: 0 3px;
+}
+
+#hiddenSortBox li::after {
+  content: "";
+  display: block;
+  border-bottom: solid 3px white;
+  transform: scaleX(0);
+  transition: transform 1s ease-in-out;
+}
+
+#hiddenSortBox li:hover::after {
+  background-color: rgb(170, 122, 1);
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+
+/* The arrow for the hiddenbox not in use
+.arrow-left {
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 45%;
+  left: -0.8em;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 20px solid rgb(134, 134, 134);
+} */

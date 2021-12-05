@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array methods</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="formContainer">
+      <form>
+        <!-- Other information box -->
+        <h1>Information</h1>
+        <div id="infoFullContainer">
+          <h2 class="formBoxHeaders">Show stats</h2>
+          <div id="infoContainer" class="boxes">
+            <div>
+              <input type="checkbox" name="genders" id="genderInput" />
+              <label for="genderInput">Gender</label>
+            </div>
+            <div>
+              <input type="checkbox" name="name" id="nameInput" />
+              <label for="nameInput">Name</label>
+            </div>
+            <div>
+              <input type="checkbox" name="money" id="moneyInput" />
+              <label for="moneyInput">Money</label>
+            </div>
+          </div>
+        </div>
+        <!-- User information box  -->
+        <div id="userFullContainer">
+          <h2 class="formBoxHeaders">About you</h2>
+          <div id="userContainer">
+            <div class="radioContainer">
+              <div class="boxes">
+                <input type="radio" name="gender" id="male" value="male" />
+                <label for="male">male</label>
+              </div>
+              <div class="boxes">
+                <input type="radio" name="gender" id="female" value="female" />
+                <label for="female">female</label>
+              </div>
+              <div class="boxes">
+                <input type="radio" name="gender" id="other" value="other" />
+                <label for="other">other</label>
+              </div>
+            </div>
+            <div class="userDiv">
+              <!-- <label for="username">Name:</label> -->
+              <input
+                type="text"
+                name="username"
+                id="usernameInput"
+                placeholder="Name"
+              />
+            </div>
+            <div class="userDiv">
+              <!-- <label for="userMoney">Cashflow:</label> -->
+              <input
+                type="number"
+                name="userMoney"
+                id="userMoneyInput"
+                placeholder="Cashflow"
+              />
+            </div>
+          </div>
+        </div>
+        <input type="button" value="Confirm" id="submitButton" />
+      </form>
+    </div>
+
+    <h1>Different Array Methods</h1>
+    <div id="container">
+      <aside id="aside">
+        <button id="addUser" class="buttons">Add user</button>
+        <button id="double" class="buttons">Double money</button>
+        <button id="multiply" class="buttons">Multiply by num entered</button>
+        <input
+          type="number"
+          name="number"
+          id="multiplyNumber"
+          class="buttons"
+          placeholder="Enter number here"
+        />
+        <button id="million" class="buttons">Show only millionaires</button>
+        <div id="sortBox">
+          <button id="sort" class="buttons">Sort by...</button>
+          <div id="hiddenSortBox">
+            <!-- <div class="arrow-left"></div> -->
+            <ul>
+              <li class="btn-grad" id="nameDes">Name Alphabetical</li>
+              <li class="btn-grad" id="nameAsc">Name Reverse</li>
+              <li class="btn-grad" id="moneyDes">Wealth Richest</li>
+              <li class="btn-grad" id="moneyAsc">Wealth Poorest</li>
+            </ul>
+          </div>
+        </div>
+        <button id="calcwealth" class="buttons">Calculate total wealth</button>
+      </aside>
+
+      <!-- <div id="arrowContainer" class="person"><strong id="sortByName">&#8595</strong>
+        <strong id="sortByMoney">&#8595</strong></div> -->
+      <main id="main-bar">
+        <h2><strong>Person Wealth</strong></h2>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
